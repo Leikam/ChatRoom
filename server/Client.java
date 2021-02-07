@@ -42,7 +42,7 @@ class Client implements Runnable, IClient {
                     break;
                 }
 
-                roomManager.sentToRoom(message, this);
+                roomManager.sendToRoom(message, this);
             }
 
             System.out.println("Cокет закрыт");
@@ -53,6 +53,11 @@ class Client implements Runnable, IClient {
         } catch (IOException e) {
             System.out.println("Соединение не удалось");
         }
+    }
+
+    @Override
+    public Scanner getReader() {
+        return this.reader;
     }
 
     @Override

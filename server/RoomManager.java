@@ -1,8 +1,6 @@
 package ChatRoom.server;
 
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,7 +25,7 @@ class RoomManager {
         return this.clients.size();
     }
 
-    public void sentToRoom(String message, IClient cc) {
+    public void sendToRoom(String message, IClient cc) {
         this.clients.forEach(client -> {
             final PrintStream writer = client.getWriter();
             writer.println();
