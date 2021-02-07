@@ -16,6 +16,8 @@ public class LocalServer {
         final ServerSocket serverSocket = new ServerSocket(port);
         final RoomManager roomManager = new RoomManager();
 
+        System.out.println("Сервер запушен на localhost:" + port);
+
         while (true) {
             final Socket socket = serverSocket.accept();
             System.out.println("Client connected!");
